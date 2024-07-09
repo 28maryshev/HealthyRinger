@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFEF4F4A2C3DA5EA0077D6F1 /* HealthyRingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F492C3DA5EA0077D6F1 /* HealthyRingerApp.swift */; };
+		CFEF4F4C2C3DA5EA0077D6F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F4B2C3DA5EA0077D6F1 /* ContentView.swift */; };
+		CFEF4F4E2C3DA5EB0077D6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFEF4F4D2C3DA5EB0077D6F1 /* Assets.xcassets */; };
+		CFEF4F512C3DA5EB0077D6F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFEF4F502C3DA5EB0077D6F1 /* Preview Assets.xcassets */; };
+		CFEF4F5B2C3DA5EB0077D6F1 /* HealthyRingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F5A2C3DA5EB0077D6F1 /* HealthyRingerTests.swift */; };
+		CFEF4F652C3DA5EB0077D6F1 /* HealthyRingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F642C3DA5EB0077D6F1 /* HealthyRingerUITests.swift */; };
+		CFEF4F672C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F662C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFEF4F572C3DA5EB0077D6F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFEF4F3E2C3DA5EA0077D6F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEF4F452C3DA5EA0077D6F1;
+			remoteInfo = HealthyRinger;
+		};
+		CFEF4F612C3DA5EB0077D6F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFEF4F3E2C3DA5EA0077D6F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEF4F452C3DA5EA0077D6F1;
+			remoteInfo = HealthyRinger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFEF4F462C3DA5EA0077D6F1 /* HealthyRinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyRinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEF4F492C3DA5EA0077D6F1 /* HealthyRingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerApp.swift; sourceTree = "<group>"; };
+		CFEF4F4B2C3DA5EA0077D6F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CFEF4F4D2C3DA5EB0077D6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFEF4F502C3DA5EB0077D6F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CFEF4F562C3DA5EB0077D6F1 /* HealthyRingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyRingerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEF4F5A2C3DA5EB0077D6F1 /* HealthyRingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerTests.swift; sourceTree = "<group>"; };
+		CFEF4F602C3DA5EB0077D6F1 /* HealthyRingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyRingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEF4F642C3DA5EB0077D6F1 /* HealthyRingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerUITests.swift; sourceTree = "<group>"; };
+		CFEF4F662C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFEF4F432C3DA5EA0077D6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F532C3DA5EB0077D6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F5D2C3DA5EB0077D6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFEF4F3D2C3DA5EA0077D6F1 = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F482C3DA5EA0077D6F1 /* HealthyRinger */,
+				CFEF4F592C3DA5EB0077D6F1 /* HealthyRingerTests */,
+				CFEF4F632C3DA5EB0077D6F1 /* HealthyRingerUITests */,
+				CFEF4F472C3DA5EA0077D6F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFEF4F472C3DA5EA0077D6F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F462C3DA5EA0077D6F1 /* HealthyRinger.app */,
+				CFEF4F562C3DA5EB0077D6F1 /* HealthyRingerTests.xctest */,
+				CFEF4F602C3DA5EB0077D6F1 /* HealthyRingerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFEF4F482C3DA5EA0077D6F1 /* HealthyRinger */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F492C3DA5EA0077D6F1 /* HealthyRingerApp.swift */,
+				CFEF4F4B2C3DA5EA0077D6F1 /* ContentView.swift */,
+				CFEF4F4D2C3DA5EB0077D6F1 /* Assets.xcassets */,
+				CFEF4F4F2C3DA5EB0077D6F1 /* Preview Content */,
+			);
+			path = HealthyRinger;
+			sourceTree = "<group>";
+		};
+		CFEF4F4F2C3DA5EB0077D6F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F502C3DA5EB0077D6F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CFEF4F592C3DA5EB0077D6F1 /* HealthyRingerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F5A2C3DA5EB0077D6F1 /* HealthyRingerTests.swift */,
+			);
+			path = HealthyRingerTests;
+			sourceTree = "<group>";
+		};
+		CFEF4F632C3DA5EB0077D6F1 /* HealthyRingerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CFEF4F642C3DA5EB0077D6F1 /* HealthyRingerUITests.swift */,
+				CFEF4F662C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift */,
+			);
+			path = HealthyRingerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFEF4F452C3DA5EA0077D6F1 /* HealthyRinger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEF4F6A2C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRinger" */;
+			buildPhases = (
+				CFEF4F422C3DA5EA0077D6F1 /* Sources */,
+				CFEF4F432C3DA5EA0077D6F1 /* Frameworks */,
+				CFEF4F442C3DA5EA0077D6F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthyRinger;
+			productName = HealthyRinger;
+			productReference = CFEF4F462C3DA5EA0077D6F1 /* HealthyRinger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFEF4F552C3DA5EB0077D6F1 /* HealthyRingerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEF4F6D2C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRingerTests" */;
+			buildPhases = (
+				CFEF4F522C3DA5EB0077D6F1 /* Sources */,
+				CFEF4F532C3DA5EB0077D6F1 /* Frameworks */,
+				CFEF4F542C3DA5EB0077D6F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFEF4F582C3DA5EB0077D6F1 /* PBXTargetDependency */,
+			);
+			name = HealthyRingerTests;
+			productName = HealthyRingerTests;
+			productReference = CFEF4F562C3DA5EB0077D6F1 /* HealthyRingerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CFEF4F5F2C3DA5EB0077D6F1 /* HealthyRingerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEF4F702C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRingerUITests" */;
+			buildPhases = (
+				CFEF4F5C2C3DA5EB0077D6F1 /* Sources */,
+				CFEF4F5D2C3DA5EB0077D6F1 /* Frameworks */,
+				CFEF4F5E2C3DA5EB0077D6F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFEF4F622C3DA5EB0077D6F1 /* PBXTargetDependency */,
+			);
+			name = HealthyRingerUITests;
+			productName = HealthyRingerUITests;
+			productReference = CFEF4F602C3DA5EB0077D6F1 /* HealthyRingerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFEF4F3E2C3DA5EA0077D6F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					CFEF4F452C3DA5EA0077D6F1 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					CFEF4F552C3DA5EB0077D6F1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = CFEF4F452C3DA5EA0077D6F1;
+					};
+					CFEF4F5F2C3DA5EB0077D6F1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = CFEF4F452C3DA5EA0077D6F1;
+					};
+				};
+			};
+			buildConfigurationList = CFEF4F412C3DA5EA0077D6F1 /* Build configuration list for PBXProject "HealthyRinger" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFEF4F3D2C3DA5EA0077D6F1;
+			productRefGroup = CFEF4F472C3DA5EA0077D6F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFEF4F452C3DA5EA0077D6F1 /* HealthyRinger */,
+				CFEF4F552C3DA5EB0077D6F1 /* HealthyRingerTests */,
+				CFEF4F5F2C3DA5EB0077D6F1 /* HealthyRingerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFEF4F442C3DA5EA0077D6F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEF4F512C3DA5EB0077D6F1 /* Preview Assets.xcassets in Resources */,
+				CFEF4F4E2C3DA5EB0077D6F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F542C3DA5EB0077D6F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F5E2C3DA5EB0077D6F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFEF4F422C3DA5EA0077D6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEF4F4C2C3DA5EA0077D6F1 /* ContentView.swift in Sources */,
+				CFEF4F4A2C3DA5EA0077D6F1 /* HealthyRingerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F522C3DA5EB0077D6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEF4F5B2C3DA5EB0077D6F1 /* HealthyRingerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEF4F5C2C3DA5EB0077D6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEF4F652C3DA5EB0077D6F1 /* HealthyRingerUITests.swift in Sources */,
+				CFEF4F672C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFEF4F582C3DA5EB0077D6F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFEF4F452C3DA5EA0077D6F1 /* HealthyRinger */;
+			targetProxy = CFEF4F572C3DA5EB0077D6F1 /* PBXContainerItemProxy */;
+		};
+		CFEF4F622C3DA5EB0077D6F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFEF4F452C3DA5EA0077D6F1 /* HealthyRinger */;
+			targetProxy = CFEF4F612C3DA5EB0077D6F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CFEF4F682C3DA5EB0077D6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFEF4F692C3DA5EB0077D6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFEF4F6B2C3DA5EB0077D6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthyRinger/Preview Content\"";
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRinger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFEF4F6C2C3DA5EB0077D6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthyRinger/Preview Content\"";
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRinger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CFEF4F6E2C3DA5EB0077D6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRingerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthyRinger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthyRinger";
+			};
+			name = Debug;
+		};
+		CFEF4F6F2C3DA5EB0077D6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRingerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthyRinger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthyRinger";
+			};
+			name = Release;
+		};
+		CFEF4F712C3DA5EB0077D6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRingerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthyRinger;
+			};
+			name = Debug;
+		};
+		CFEF4F722C3DA5EB0077D6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X732N8UFMF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladymyr.maryshev.HealthyRingerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthyRinger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFEF4F412C3DA5EA0077D6F1 /* Build configuration list for PBXProject "HealthyRinger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEF4F682C3DA5EB0077D6F1 /* Debug */,
+				CFEF4F692C3DA5EB0077D6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFEF4F6A2C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRinger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEF4F6B2C3DA5EB0077D6F1 /* Debug */,
+				CFEF4F6C2C3DA5EB0077D6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFEF4F6D2C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRingerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEF4F6E2C3DA5EB0077D6F1 /* Debug */,
+				CFEF4F6F2C3DA5EB0077D6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFEF4F702C3DA5EB0077D6F1 /* Build configuration list for PBXNativeTarget "HealthyRingerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEF4F712C3DA5EB0077D6F1 /* Debug */,
+				CFEF4F722C3DA5EB0077D6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFEF4F3E2C3DA5EA0077D6F1 /* Project object */;
+}
