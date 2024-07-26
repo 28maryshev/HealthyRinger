@@ -1,56 +1,45 @@
-//
-//  HomeView.swift
-//  HealthyRinger
-//
-//  Created by Владимир Марышев on 22.07.2024.
-//
-
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedTab = 2
+    @StateObject private var alarmViewModel = AlarmViewModel()
+    
     var body: some View {
-        TabView {
-            // MARK: - Вкладка "Статистики"
+        TabView(selection: $selectedTab) {
+            // MARK: - Statistic Tab
             NavigationView {
                 Color("BackgroundColorSet").ignoresSafeArea()
-                
-                
-                
             }
             .tabItem {
                 Image(systemName: "waveform")
                 Text("Statistic")
-            }
+            }.tag(1)
             
-            // MARK: - Вкладка "Будильника"
+            // MARK: - Alarm Tab
             NavigationView {
                 ZStack {
                     Color("BackgroundColorSet").ignoresSafeArea()
                     
-                    NavigationLink(destination: AlarmSettingsView()) {
-                        AlarmView()
+                    VStack {
+                        NavigationLink(destination: AlarmSettingsView(alarmViewModel: alarmViewModel)) {
+                            AlarmView(alarmViewModel: alarmViewModel)
+                        }
                     }
                 }
             }
             .tabItem {
                 Image(systemName: "alarm")
                 Text("Alarm")
-            }
+            }.tag(2)
             
-            // MARK: - Вкладка "Настроек"
+            // MARK: - Settings Tab
             NavigationView {
                 Color("BackgroundColorSet").ignoresSafeArea()
-                
-                
-                
-                
-                
-                
-                
-            }.tabItem {
+            }
+            .tabItem {
                 Image(systemName: "gearshape.fill")
                 Text("Settings")
-            }
+            }.tag(3)
         }
     }
 }
