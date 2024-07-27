@@ -2,12 +2,13 @@ import SwiftUI
 
 class AlarmViewModel: ObservableObject {
     @Published var isAlarmOn: Bool = true
-    @Published var selectedDays: [String] = ["SUN", "MON", "TUE"]
+    @Published var selectedDays: [String] = []
     @Published var alarmName: String = "Alarm 1"
     @Published var alarmTime: Date = Date()
+    
+    @Published var week: [String] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
 }
 
-//MARK: - Time Widget
 struct AlarmView: View {
     @ObservedObject var alarmViewModel: AlarmViewModel
     
@@ -41,6 +42,10 @@ struct AlarmView: View {
 
 struct AlarmSettingsView: View {
     @ObservedObject var alarmViewModel: AlarmViewModel
+    
+    let columns: [GridItem] = [
+        GridItem(.flexible())
+    ]
     
     var body: some View {
         ZStack {
@@ -76,6 +81,36 @@ struct AlarmSettingsView: View {
                 .datePickerStyle(.wheel)
                 .colorInvert()
                 .foregroundColor(Color("StringColorSet"))
+                
+                //MARK: - Choose a day
+                HStack {
+                    Text("Choose a day:")
+                        .font(.system(size: 18, weight: .light))
+                        .foregroundColor(Color("StringColorSet"))
+                    Spacer()
+                }
+                .padding(.leading)
+                
+                LazyHGrid(rows: columns, spacing: 5, content: {
+                    ForEach(alarmViewModel.week, id: \.self) { day in
+                        Button(action: {
+                            if alarmViewModel.selectedDays.contains(day) {
+                                alarmViewModel.selectedDays.removeAll { $0 == day }
+                            } else {
+                                alarmViewModel.selectedDays.append(day)
+                            }
+                        }) {
+                            Text(day)
+                                .frame(width: 48, height: 48)
+                                .background(alarmViewModel.selectedDays.contains(day) ? Color("FramesColorSet") : Color("InactiveColorSet"))
+                                .foregroundColor(alarmViewModel.selectedDays.contains(day) ? Color("StringColorSet") : Color("StringColorSet").opacity(0.3))
+                                .cornerRadius(50)
+                        }
+                    }
+                })
+                .frame(height: 55) // Adjust height as needed
+                
+                Spacer()
             }
         }
     }
