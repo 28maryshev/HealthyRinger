@@ -16,6 +16,7 @@
 		CFEF4F5B2C3DA5EB0077D6F1 /* HealthyRingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F5A2C3DA5EB0077D6F1 /* HealthyRingerTests.swift */; };
 		CFEF4F652C3DA5EB0077D6F1 /* HealthyRingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F642C3DA5EB0077D6F1 /* HealthyRingerUITests.swift */; };
 		CFEF4F672C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F662C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift */; };
+		CFFDB3392C5D742000CD1EC3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFDB3382C5D742000CD1EC3 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CFEF4F602C3DA5EB0077D6F1 /* HealthyRingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyRingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFEF4F642C3DA5EB0077D6F1 /* HealthyRingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerUITests.swift; sourceTree = "<group>"; };
 		CFEF4F662C3DA5EB0077D6F1 /* HealthyRingerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRingerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CFFDB3382C5D742000CD1EC3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				CFEF4F492C3DA5EA0077D6F1 /* HealthyRingerApp.swift */,
 				CF2FD13B2C4EB80900F7FA71 /* HomeView.swift */,
 				CFB9343C2C4FE5210074CBF4 /* AlarmView.swift */,
+				CFFDB3382C5D742000CD1EC3 /* Model.swift */,
 				CFB9343E2C4FF0410074CBF4 /* SwiftUIView.swift */,
 				CFEF4F4D2C3DA5EB0077D6F1 /* Assets.xcassets */,
 				CFEF4F4F2C3DA5EB0077D6F1 /* Preview Content */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFDB3392C5D742000CD1EC3 /* Model.swift in Sources */,
 				CF2FD13C2C4EB80900F7FA71 /* HomeView.swift in Sources */,
 				CFB9343D2C4FE5210074CBF4 /* AlarmView.swift in Sources */,
 				CFB9343F2C4FF0410074CBF4 /* SwiftUIView.swift in Sources */,
