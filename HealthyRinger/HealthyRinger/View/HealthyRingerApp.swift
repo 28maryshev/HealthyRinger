@@ -12,7 +12,7 @@ struct HealthyRingerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(alarmViewModel: AlarmViewModel())
         }
     }
 }
