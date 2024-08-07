@@ -27,7 +27,8 @@ struct HomeView: View {
                             destination: AlarmSettingsView(
                                 alarmViewModel: alarmViewModel,
                                 wakeUpIntervalData: wakeUpIntervalData,
-                                soundSettingsViewData: soundSettingsViewData
+                                soundSettingsViewData: soundSettingsViewData,
+                                delayData: DelayViewModel()
                             )
                         ) {
                             AlarmView(alarmData: alarmViewModel, wakeUpIntervalData: wakeUpIntervalData)

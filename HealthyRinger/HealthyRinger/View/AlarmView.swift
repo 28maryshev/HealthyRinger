@@ -11,6 +11,7 @@ struct AlarmSettingsView: View {
     @ObservedObject var alarmViewModel: AlarmViewModel
     @ObservedObject var wakeUpIntervalData: WakeUpModel
     @ObservedObject var soundSettingsViewData: SoundSettingsViewModel
+    @ObservedObject var delayData: DelayViewModel
 
     @State private var showingAlert = false
     
@@ -126,7 +127,27 @@ struct AlarmSettingsView: View {
                 }
                 .padding()
                 
+                //MARK: - Delay
+                HStack {
+                    Text("Delay:")
+                        .font(.system(size: 18, weight: .light))
+                        .foregroundColor(Color("StringColorSet"))
+                    Spacer()
+                    
+                    Picker(selection: $delayData.selectedDelay,
+                           label: Text("\(delayData.selectedDelay) min")) {
+                        ForEach(delayData.delayOptions, id: \.self) { delay in
+                            Text("\(delay) min").tag(delay)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .accentColor(Color("StringColorSet").opacity(0.5))
+                    
+                }
+                .padding()
+                
                 Spacer()
+                
             }
         }
     }
@@ -136,6 +157,7 @@ struct AlarmSettingsView: View {
     AlarmSettingsView(
         alarmViewModel: AlarmViewModel(),
         wakeUpIntervalData: WakeUpModel(),
-        soundSettingsViewData: SoundSettingsViewModel()
+        soundSettingsViewData: SoundSettingsViewModel(),
+        delayData: DelayViewModel()
     )
 }
