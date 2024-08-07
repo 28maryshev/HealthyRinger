@@ -10,17 +10,16 @@ class WakeUpModel: ObservableObject {
 struct WakeUpInterval: View {
     @ObservedObject var wakeUpIntervalData: WakeUpModel
     @ObservedObject var alarmData: AlarmViewModel
-    var interval = 60
     
     @State var firstPosition: CGFloat = 70
     @State var secondPosition: CGFloat = 290
     
     var body: some View {
         let calendar = Calendar.current
-        let minusTwoTime = calendar.date(byAdding: .minute, value: -2 * interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
-        let minusOneTime = calendar.date(byAdding: .minute, value: -interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
-        let plusOneTime = calendar.date(byAdding: .minute, value: interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
-        let plusTwoTime = calendar.date(byAdding: .minute, value: 2 * interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let minusTwoTime = calendar.date(byAdding: .minute, value: -2 * wakeUpIntervalData.selectedInterval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let minusOneTime = calendar.date(byAdding: .minute, value: -wakeUpIntervalData.selectedInterval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let plusOneTime = calendar.date(byAdding: .minute, value: wakeUpIntervalData.selectedInterval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let plusTwoTime = calendar.date(byAdding: .minute, value: 2 * wakeUpIntervalData.selectedInterval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
         
         VStack {
             ZStack(alignment: .leading) {

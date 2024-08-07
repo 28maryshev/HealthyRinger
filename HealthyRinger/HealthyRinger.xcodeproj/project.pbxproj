@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF2FD13C2C4EB80900F7FA71 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FD13B2C4EB80900F7FA71 /* HomeView.swift */; };
+		CF4FD0A12C63CEDF00B6D0C4 /* DelayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD0A02C63CEDF00B6D0C4 /* DelayViewModel.swift */; };
 		CF5EBFB62C62894E005C8590 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5EBFB52C62894E005C8590 /* SoundModel.swift */; };
 		CF5EBFBC2C628C5B005C8590 /* AlarmWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5EBFBB2C628C5B005C8590 /* AlarmWidgetViewModel.swift */; };
 		CF5EBFBF2C628D88005C8590 /* WakeUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5EBFBE2C628D88005C8590 /* WakeUpViewModel.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		CF2FD13B2C4EB80900F7FA71 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CF4FD0A02C63CEDF00B6D0C4 /* DelayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayViewModel.swift; sourceTree = "<group>"; };
 		CF5EBFB52C62894E005C8590 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
 		CF5EBFBB2C628C5B005C8590 /* AlarmWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWidgetViewModel.swift; sourceTree = "<group>"; };
 		CF5EBFBE2C628D88005C8590 /* WakeUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				CF5EBFBB2C628C5B005C8590 /* AlarmWidgetViewModel.swift */,
 				CF5EBFBE2C628D88005C8590 /* WakeUpViewModel.swift */,
 				CF5EBFC02C62972D005C8590 /* SoundSettingsViewModel.swift */,
+				CF4FD0A02C63CEDF00B6D0C4 /* DelayViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4FD0A12C63CEDF00B6D0C4 /* DelayViewModel.swift in Sources */,
 				CF2FD13C2C4EB80900F7FA71 /* HomeView.swift in Sources */,
 				CFB9343D2C4FE5210074CBF4 /* AlarmView.swift in Sources */,
 				CF5EBFBC2C628C5B005C8590 /* AlarmWidgetViewModel.swift in Sources */,
