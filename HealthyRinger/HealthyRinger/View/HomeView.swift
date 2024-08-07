@@ -2,6 +2,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var alarmViewModel: AlarmViewModel
+    @ObservedObject var wakeUpIntervalData: WakeUpModel
+    @ObservedObject var soundSettingsViewData: SoundSettingsViewModel
     @State private var selectedTab = 2
     
     var body: some View {
@@ -21,8 +23,14 @@ struct HomeView: View {
                     Color("BackgroundColorSet").ignoresSafeArea()
                     
                     VStack {
-                        NavigationLink(destination: AlarmSettingsView(alarmViewModel: alarmViewModel, wakeUpData: WakeUpModel())) {
-                            AlarmView(alarmData: alarmViewModel)
+                        NavigationLink(
+                            destination: AlarmSettingsView(
+                                alarmViewModel: alarmViewModel,
+                                wakeUpIntervalData: wakeUpIntervalData,
+                                soundSettingsViewData: soundSettingsViewData
+                            )
+                        ) {
+                            AlarmView(alarmData: alarmViewModel, wakeUpIntervalData: wakeUpIntervalData)
                         }
                     }
                 }
@@ -45,5 +53,9 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(alarmViewModel: AlarmViewModel())
+    HomeView(
+        alarmViewModel: AlarmViewModel(),
+        wakeUpIntervalData: WakeUpModel(),
+        soundSettingsViewData: SoundSettingsViewModel()
+    )
 }
