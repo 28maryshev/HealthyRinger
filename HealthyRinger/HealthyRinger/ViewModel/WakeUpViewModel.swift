@@ -5,7 +5,6 @@ class WakeUpModel: ObservableObject {
     @Published var selectedInterval: Int = 60
     @Published var intervalOptions: [Int] = [30, 60, 120]
     @Published var alarmTime: Date = Date()
-    
 }
 
 struct WakeUpInterval: View {
@@ -18,10 +17,10 @@ struct WakeUpInterval: View {
     
     var body: some View {
         let calendar = Calendar.current
-        let minusTwoTime = calendar.date(byAdding: .minute, value: -2 * interval/2, to: alarmData.alarmTime) ?? alarmData.alarmTime
-        let minusOneTime = calendar.date(byAdding: .minute, value: -interval/2, to: alarmData.alarmTime) ?? alarmData.alarmTime
-        let plusOneTime = calendar.date(byAdding: .minute, value: interval/2, to: alarmData.alarmTime) ?? alarmData.alarmTime
-        let plusTwoTime = calendar.date(byAdding: .minute, value: 2 * interval/2, to: alarmData.alarmTime) ?? alarmData.alarmTime
+        let minusTwoTime = calendar.date(byAdding: .minute, value: -2 * interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let minusOneTime = calendar.date(byAdding: .minute, value: -interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let plusOneTime = calendar.date(byAdding: .minute, value: interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
+        let plusTwoTime = calendar.date(byAdding: .minute, value: 2 * interval/2, to: wakeUpIntervalData.alarmTime) ?? wakeUpIntervalData.alarmTime
         
         VStack {
             ZStack(alignment: .leading) {
@@ -46,7 +45,7 @@ struct WakeUpInterval: View {
                         .foregroundStyle(Color("StringColorSet"))
                         .position(x: self.firstPosition + 30, y: geometry.size.height / 2)
                     
-                    Text(alarmData.alarmTime, style: .time)
+                    Text(wakeUpIntervalData.alarmTime, style: .time)
                         .foregroundColor(Color("StringColorSet"))
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     
@@ -67,5 +66,8 @@ struct WakeUpInterval: View {
 }
 
 #Preview {
-    WakeUpInterval(wakeUpIntervalData: WakeUpModel(), alarmData: AlarmViewModel())
+    WakeUpInterval(
+        wakeUpIntervalData: WakeUpModel(),
+        alarmData: AlarmViewModel()
+    )
 }

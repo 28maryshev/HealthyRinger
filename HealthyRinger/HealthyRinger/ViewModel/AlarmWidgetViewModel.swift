@@ -3,6 +3,7 @@ import SwiftUI
 
 struct AlarmView: View {
     @ObservedObject var alarmData: AlarmViewModel
+    @ObservedObject var wakeUpIntervalData: WakeUpModel
     @State var isAlarmOn: Bool = true
     
     var body: some View {
@@ -12,7 +13,7 @@ struct AlarmView: View {
                     .font(.caption)
                     .foregroundColor(.gray)
                 HStack {
-                    Text(alarmData.alarmTime, style: .time)
+                    Text(wakeUpIntervalData.alarmTime, style: .time)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -34,5 +35,8 @@ struct AlarmView: View {
 }
 
 #Preview {
-    AlarmView(alarmData: AlarmViewModel())
+    AlarmView(
+        alarmData: AlarmViewModel(),
+        wakeUpIntervalData: WakeUpModel()
+    )
 }
