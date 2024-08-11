@@ -18,7 +18,7 @@ struct AlarmSettingsView: View {
     var body: some View {
         ScrollView(.vertical) {
             ZStack {
-                Color("BackgroundColorSet").ignoresSafeArea()
+              Color("BackgroundColorSet").ignoresSafeArea()
                 
                 VStack {
                     // MARK: - Alarm title
@@ -50,7 +50,7 @@ struct AlarmSettingsView: View {
                     .padding(.horizontal, 18)
                     .labelsHidden()
                     .datePickerStyle(.wheel)
-                    .colorInvert()
+                    //.colorInvert()
                     .foregroundColor(Color("StringColorSet"))
                     
                     // MARK: - Choose a day
@@ -181,7 +181,8 @@ struct AlarmSettingsView: View {
                     
                 }
             }
-        }.background(Color("BackgroundColorSet"))
+        }
+        .background(Color("BackgroundColorSet"))
     }
 }
 

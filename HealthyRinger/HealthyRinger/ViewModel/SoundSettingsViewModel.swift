@@ -2,7 +2,7 @@ import SwiftUI
 import AVFoundation
 
 class SoundSettingsViewModel: ObservableObject {
-    @Published var soundValue: String = "Bells" // Установите значение по умолчанию на "Bells"
+    @Published var soundValue: String = "Bells" 
 }
 
 // MARK: - SoundSettingsView struct
@@ -17,12 +17,12 @@ struct SoundSettingsView: View {
     
     var body: some View {
         ZStack {
-            Color("BackgroundColorSet").ignoresSafeArea()
+           Color("BackgroundColorSet").ignoresSafeArea()
             
             List(sound) { sound in
                 Button {
                     playSound(named: sound.name)
-                    soundSettingsViewData.soundValue = removeFileExtension(from: sound.name) // Обновление soundValue при выборе звука
+                    soundSettingsViewData.soundValue = removeFileExtension(from: sound.name)
                 } label: {
                     Text(removeFileExtension(from: sound.name))
                 }
