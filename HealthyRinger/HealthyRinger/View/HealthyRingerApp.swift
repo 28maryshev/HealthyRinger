@@ -23,6 +23,7 @@ struct HealthyRingerApp: App {
                 wakeUpIntervalData: wakeUpIntervalData,
                 soundSettingsViewData: soundSettingsViewData
             )
+            .preferredColorScheme(.dark) // Добавьте этот модификатор для темной темы
         }
     }
 }

@@ -33,6 +33,25 @@ struct HomeView: View {
                         ) {
                             AlarmView(alarmData: alarmViewModel, wakeUpIntervalData: wakeUpIntervalData)
                         }
+                        
+                        NavigationLink(
+                    destination: AlarmSettingsView(
+                                  alarmViewModel: alarmViewModel,
+                                  wakeUpIntervalData: wakeUpIntervalData,
+                                  soundSettingsViewData: soundSettingsViewData,
+                                  delayData: DelayViewModel()
+                              )
+                          ) {
+                              Text("+")
+                                  .fontWeight(.thin)
+                                  .font(.system(size: 54))
+                                  .frame(width: 100, height: 46)
+                                  .foregroundColor(Color("BackgroundColorSet"))
+                                  .background(Color("StringColorSet"))
+                                  .cornerRadius(10)
+                                  .padding()
+                            
+                        }
                     }
                 }
             }
