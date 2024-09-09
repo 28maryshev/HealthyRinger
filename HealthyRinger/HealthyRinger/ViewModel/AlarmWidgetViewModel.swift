@@ -4,7 +4,7 @@ import SwiftUI
 struct AlarmView: View {
     @ObservedObject var alarmData: AlarmViewModel
     @ObservedObject var wakeUpIntervalData: WakeUpModel
-    @State var isAlarmOn: Bool = true
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -18,10 +18,10 @@ struct AlarmView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     Spacer()
-                    Toggle("", isOn: $isAlarmOn)
+                    Toggle("", isOn: $alarmData.isAlarmEnabled)
                         .labelsHidden()
                 }
-                Text("SUN, MON, TUE")
+                Text(alarmData.repeatDays.joined(separator: ", "))
                     .font(.caption)
                     .foregroundColor(.gray)
             }
