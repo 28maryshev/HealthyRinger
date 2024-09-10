@@ -6,12 +6,18 @@ struct AlarmSettingsView: View {
     @ObservedObject var soundSettingsViewData: SoundSettingsViewModel
     @ObservedObject var delayData: DelayViewModel
     
+    // Индекс редактируемого будильника, если он существует
+    var alarmIndex: Int?
+    
+    // Используем для управления закрытием экрана
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var showingAlert = false
     
     var body: some View {
         ScrollView(.vertical) {
             ZStack {
-              Color("BackgroundColorSet").ignoresSafeArea()
+                Color("BackgroundColorSet").ignoresSafeArea()
                 
                 VStack {
                     // MARK: - Alarm title
@@ -26,7 +32,6 @@ struct AlarmSettingsView: View {
                         }) {
                             Text("Change title")
                         }
-                        //.padding()
                         .font(.system(size: 18, weight: .light))
                         .foregroundColor(Color("StringColorSet"))
                     }
@@ -36,14 +41,13 @@ struct AlarmSettingsView: View {
                     // MARK: - Time setup
                     DatePicker(
                         "",
-                        selection: $wakeUpIntervalData.alarmTime,
+                        selection: $alarmViewModel.time,
                         displayedComponents: .hourAndMinute
                     )
                     .padding(.top, 20)
                     .padding(.horizontal, 18)
                     .labelsHidden()
                     .datePickerStyle(.wheel)
-                    //.colorInvert()
                     .foregroundColor(Color("StringColorSet"))
                     
                     // MARK: - Choose a day
@@ -148,16 +152,15 @@ struct AlarmSettingsView: View {
                     
                     HStack {
                         Button(action: {
-                            print("Button tapped!")
-                        }) {
-                            Text("Delete alarm")
-                                .padding()
-                                .foregroundColor(.red)
-                                .cornerRadius(10)
-                        }
-                        
-                        Button(action: {
-                            print("Button tapped!")
+                            if let alarmIndex = alarmIndex {
+                                // Редактирование существующего будильника
+                                alarmViewModel.updateAlarm(at: alarmIndex)
+                            } else {
+                                // Создание нового будильника
+                                alarmViewModel.addAlarm()
+                            }
+                            // Возвращаем пользователя на экран HomeView
+                            presentationMode.wrappedValue.dismiss()
                         }) {
                             Text("Save")
                                 .frame(width: 120, height: 50)
@@ -165,7 +168,20 @@ struct AlarmSettingsView: View {
                                 .background(Color("ImportantColorSet"))
                                 .cornerRadius(10)
                                 .padding()
-                            
+                        }
+                        
+                        Button(action: {
+                            if let alarmIndex = alarmIndex {
+                                // Удаление будильника
+                                alarmViewModel.deleteAlarm(at: alarmIndex)
+                                // Возвращаем пользователя на экран HomeView
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }) {
+                            Text("Delete alarm")
+                                .padding()
+                                .foregroundColor(.red)
+                                .cornerRadius(10)
                         }
                     }
                     .padding()

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct AlarmWidgetViewModel: View {
+struct AlarmWidgetView: View {
     let alarm: Alarm  // Будильник передается как параметр
     
     var body: some View {
@@ -32,7 +32,3 @@ struct AlarmWidgetViewModel: View {
     }
 }
 
-//#Preview {
-//    AlarmWidgetViewModel(alarm: Alarm
-//    )
-//}

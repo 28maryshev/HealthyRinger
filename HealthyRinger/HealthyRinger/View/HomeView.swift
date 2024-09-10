@@ -6,12 +6,12 @@ struct HomeView: View {
     @ObservedObject var soundSettingsViewData: SoundSettingsViewModel
     @State private var selectedTab = 2
     
-    // Состояние для управления переходом на экран редактирования будильника
     @State private var isEditingNewAlarm = false
+    @State private var editingAlarmIndex: Int? = nil
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            // MARK: - Statistic Tab
+            // MARK: - Alarm Tab
             NavigationView {
                 Color("BackgroundColorSet").ignoresSafeArea()
             }
@@ -20,25 +20,27 @@ struct HomeView: View {
                 Text("Statistic")
             }.tag(1)
             
-            // MARK: - Alarm Tab
             NavigationView {
-                ZStack {
-                    Color("BackgroundColorSet").ignoresSafeArea()
-                    
-                    VStack {
-                        // Список будильников
-                        NavigationLink(
-                            destination: AlarmSettingsView(
-                                alarmViewModel: alarmViewModel,
-                                wakeUpIntervalData: wakeUpIntervalData,
-                                soundSettingsViewData: soundSettingsViewData,
-                                delayData: DelayViewModel()
-                            )
-                        ) {
-                            AlarmView(alarmData: alarmViewModel, wakeUpIntervalData: wakeUpIntervalData)
+                VStack {
+                    ScrollView {
+                        ForEach(alarmViewModel.alarms.indices, id: \.self) { index in
+                            NavigationLink(
+                                destination: AlarmSettingsView(
+                                    alarmViewModel: alarmViewModel,
+                                    wakeUpIntervalData: wakeUpIntervalData,
+                                    soundSettingsViewData: soundSettingsViewData,
+                                    delayData: DelayViewModel(),
+                                    alarmIndex: index
+                                )
+                                .onAppear {
+                                    alarmViewModel.loadAlarm(at: index)
+                                }
+                            ) {
+                                AlarmWidgetView(alarm: alarmViewModel.alarms[index])  // Передаем конкретный будильник
+                            }
                         }
-
-                        // NavigationLink для перехода к редактированию нового будильника
+                        
+                        // Кнопка добавления нового будильника
                         NavigationLink(
                             destination: AlarmSettingsView(
                                 alarmViewModel: alarmViewModel,
@@ -46,28 +48,23 @@ struct HomeView: View {
                                 soundSettingsViewData: soundSettingsViewData,
                                 delayData: DelayViewModel()
                             ),
-                            isActive: $isEditingNewAlarm // Активируем переход при создании будильника
+                            isActive: $isEditingNewAlarm
                         ) {
-                            EmptyView()
+                            Button(action: {
+                                alarmViewModel.resetCurrentAlarm() // Сброс данных для нового будильника
+                                isEditingNewAlarm = true
+                            }) {
+                                Text("+")
+                                    .fontWeight(.thin)
+                                    .font(.system(size: 54))
+                                    .frame(width: 100, height: 46)
+                                    .foregroundColor(Color("BackgroundColorSet"))
+                                    .background(Color("StringColorSet"))
+                                    .cornerRadius(10)
+                                    .padding()
+                            }
                         }
-                        
-                        // Кнопка добавления нового будильника
-                        Button(action: {
-                            // Добавляем новый будильник
-                            alarmViewModel.addAlarm()
-                            // Активируем переход на экран редактирования
-                            isEditingNewAlarm = true
-                        }) {
-                            Text("+")
-                                .fontWeight(.thin)
-                                .font(.system(size: 54))
-                                .frame(width: 100, height: 46)
-                                .foregroundColor(Color("BackgroundColorSet"))
-                                .background(Color("StringColorSet"))
-                                .cornerRadius(10)
-                                .padding()
-                        }
-                    }
+                    }.background(Color("BackgroundColorSet"))
                 }
             }
             .tabItem {
