@@ -15,6 +15,7 @@
 		CF5EBFC12C62972D005C8590 /* SoundSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5EBFC02C62972D005C8590 /* SoundSettingsViewModel.swift */; };
 		CFB9343D2C4FE5210074CBF4 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9343C2C4FE5210074CBF4 /* AlarmView.swift */; };
 		CFB9343F2C4FF0410074CBF4 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9343E2C4FF0410074CBF4 /* SwiftUIView.swift */; };
+		CFCB34432C98B143002DD6B3 /* AlarmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCB34422C98B143002DD6B3 /* AlarmAlertView.swift */; };
 		CFDA884A2C8F787B0093274E /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA88492C8F787B0093274E /* AlarmViewModel.swift */; };
 		CFDA884C2C9040920093274E /* AlarmWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA884B2C9040920093274E /* AlarmWidgetView.swift */; };
 		CFEF4F4A2C3DA5EA0077D6F1 /* HealthyRingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF4F492C3DA5EA0077D6F1 /* HealthyRingerApp.swift */; };
@@ -51,6 +52,7 @@
 		CF5EBFC02C62972D005C8590 /* SoundSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewModel.swift; sourceTree = "<group>"; };
 		CFB9343C2C4FE5210074CBF4 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		CFB9343E2C4FF0410074CBF4 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		CFCB34422C98B143002DD6B3 /* AlarmAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAlertView.swift; sourceTree = "<group>"; };
 		CFDA88492C8F787B0093274E /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		CFDA884B2C9040920093274E /* AlarmWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWidgetView.swift; sourceTree = "<group>"; };
 		CFEF4F462C3DA5EA0077D6F1 /* HealthyRinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyRinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				CF2FD13B2C4EB80900F7FA71 /* HomeView.swift */,
 				CFB9343C2C4FE5210074CBF4 /* AlarmView.swift */,
 				CFDA884B2C9040920093274E /* AlarmWidgetView.swift */,
+				CFCB34422C98B143002DD6B3 /* AlarmAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				CFDA884C2C9040920093274E /* AlarmWidgetView.swift in Sources */,
 				CF4FD0A12C63CEDF00B6D0C4 /* DelayViewModel.swift in Sources */,
 				CF2FD13C2C4EB80900F7FA71 /* HomeView.swift in Sources */,
+				CFCB34432C98B143002DD6B3 /* AlarmAlertView.swift in Sources */,
 				CFB9343D2C4FE5210074CBF4 /* AlarmView.swift in Sources */,
 				CF131AC62C7620990069ABE9 /* AlarmsModel.swift in Sources */,
 				CFDA884A2C8F787B0093274E /* AlarmViewModel.swift in Sources */,

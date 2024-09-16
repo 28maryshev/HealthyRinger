@@ -6,7 +6,7 @@ class AlarmViewModel: ObservableObject {
 
     @Published var alarmName: String = "Alarm 1"
     @Published var time = Date()
-    @Published var isAlarmEnabled: Bool = true
+    @Published var isAlarmEnabled: Bool = false
     @Published var repeatDays: [String] = ["MON", "TUE", "WED", "THU", "FRI"]
 
     @Published var week: [String] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
@@ -14,9 +14,21 @@ class AlarmViewModel: ObservableObject {
     init() {
            // Проверяем, есть ли будильники. Если нет, добавляем стандартный будильник.
            if alarms.isEmpty {
+//               // Установка времени на 6:00 утра
+//               var dateComponents = DateComponents()
+//               dateComponents.hour = 6
+//               dateComponents.minute = 0
+
+               // Получаем текущую дату
+               let currentCalendar = Calendar.current
+               let currentDate = currentCalendar.startOfDay(for: Date())
+               
+               // Устанавливаем время на 7:00 утра текущего дня
+               let adjustedTime = currentCalendar.date(bySettingHour: 7, minute: 0, second: 0, of: currentDate) ?? Date()
+               
                let defaultAlarm = Alarm(
-                   name: "Default Alarm",
-                   time: time,
+                   name: "First Alarm",
+                   time: adjustedTime,
                    isAlarmEnabled: isAlarmEnabled,
                    repeatDays: repeatDays
                )
