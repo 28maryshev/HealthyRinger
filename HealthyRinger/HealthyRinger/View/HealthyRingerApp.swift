@@ -2,15 +2,7 @@ import SwiftUI
 
 @main
 struct HealthyRingerApp: App {
-//    init() {
-//        UITabBar.appearance().barTintColor = UIColor(Color("BackgroundColorSet"))
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        appearance.backgroundColor = UIColor(Color("BackgroundColorSet"))
-//        
-//        UINavigationBar.appearance().standardAppearance = appearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-//    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
@@ -23,7 +15,41 @@ struct HealthyRingerApp: App {
                 wakeUpIntervalData: wakeUpIntervalData,
                 soundSettingsViewData: soundSettingsViewData
             )
-            .preferredColorScheme(.dark) // Добавьте этот модификатор для темной темы
+            .preferredColorScheme(.dark)
         }
     }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if granted {
+                print("Notification permission granted.")
+            } else {
+                print("Notification permission denied.")
+            }
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+    
+    // Обработка получения уведомления в фоне
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let notification = response.notification
+        let userInfo = notification.request.content.userInfo
+        
+        // Обработка уведомления
+        print("Notification received with userInfo: \(userInfo)")
+        
+        completionHandler()
+    }
+    
+    // Обработка отображения уведомления
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let options: UNNotificationPresentationOptions = [.alert, .sound]
+        completionHandler(options)
+    }
+    
+    
 }

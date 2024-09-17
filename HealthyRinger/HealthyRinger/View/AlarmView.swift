@@ -1,24 +1,23 @@
 import SwiftUI
 
-class AlarmViewModel: ObservableObject {
-    @Published var selectedDays: [String] = []
-    @Published var alarmName: String = "Alarm 1"
-    @Published var week: [String] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
-}
-
-
 struct AlarmSettingsView: View {
     @ObservedObject var alarmViewModel: AlarmViewModel
     @ObservedObject var wakeUpIntervalData: WakeUpModel
     @ObservedObject var soundSettingsViewData: SoundSettingsViewModel
     @ObservedObject var delayData: DelayViewModel
     
+    // Индекс редактируемого будильника, если он существует
+    var alarmIndex: Int?
+    
+    // Используем для управления закрытием экрана
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var showingAlert = false
     
     var body: some View {
         ScrollView(.vertical) {
             ZStack {
-              Color("BackgroundColorSet").ignoresSafeArea()
+                Color("BackgroundColorSet").ignoresSafeArea()
                 
                 VStack {
                     // MARK: - Alarm title
@@ -33,7 +32,6 @@ struct AlarmSettingsView: View {
                         }) {
                             Text("Change title")
                         }
-                        //.padding()
                         .font(.system(size: 18, weight: .light))
                         .foregroundColor(Color("StringColorSet"))
                     }
@@ -43,14 +41,13 @@ struct AlarmSettingsView: View {
                     // MARK: - Time setup
                     DatePicker(
                         "",
-                        selection: $wakeUpIntervalData.alarmTime,
+                        selection: $alarmViewModel.time,
                         displayedComponents: .hourAndMinute
                     )
                     .padding(.top, 20)
                     .padding(.horizontal, 18)
                     .labelsHidden()
                     .datePickerStyle(.wheel)
-                    //.colorInvert()
                     .foregroundColor(Color("StringColorSet"))
                     
                     // MARK: - Choose a day
@@ -65,16 +62,16 @@ struct AlarmSettingsView: View {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 5) {
                         ForEach(alarmViewModel.week, id: \.self) { day in
                             Button(action: {
-                                if alarmViewModel.selectedDays.contains(day) {
-                                    alarmViewModel.selectedDays.removeAll { $0 == day }
+                                if alarmViewModel.repeatDays.contains(day) {
+                                    alarmViewModel.repeatDays.removeAll { $0 == day }
                                 } else {
-                                    alarmViewModel.selectedDays.append(day)
+                                    alarmViewModel.repeatDays.append(day)
                                 }
                             }) {
                                 Text(day)
                                     .frame(width: 48, height: 48)
-                                    .background(alarmViewModel.selectedDays.contains(day) ? Color("FramesColorSet") : Color("InactiveColorSet"))
-                                    .foregroundColor(alarmViewModel.selectedDays.contains(day) ? Color("StringColorSet") : Color("StringColorSet").opacity(0.3))
+                                    .background(alarmViewModel.repeatDays.contains(day) ? Color("FramesColorSet") : Color("InactiveColorSet"))
+                                    .foregroundColor(alarmViewModel.repeatDays.contains(day) ? Color("StringColorSet") : Color("StringColorSet").opacity(0.3))
                                     .cornerRadius(50)
                             }
                         }
@@ -119,7 +116,7 @@ struct AlarmSettingsView: View {
                             )
                         ) {
                             HStack {
-                                Text("\(soundSettingsViewData.soundValue)") // Отображение текущего soundValue
+                                Text("\(soundSettingsViewData.soundValue)")
                                     .font(.system(size: 18, weight: .light))
                                     .foregroundColor(Color("StringColorSet"))
                                 
@@ -155,16 +152,15 @@ struct AlarmSettingsView: View {
                     
                     HStack {
                         Button(action: {
-                            print("Button tapped!")
-                        }) {
-                            Text("Delete alarm")
-                                .padding()
-                                .foregroundColor(.red)
-                                .cornerRadius(10)
-                        }
-                        
-                        Button(action: {
-                            print("Button tapped!")
+                            if let alarmIndex = alarmIndex {
+                                // Редактирование существующего будильника
+                                alarmViewModel.updateAlarm(at: alarmIndex)
+                            } else {
+                                // Создание нового будильника
+                                alarmViewModel.addAlarm()
+                            }
+                            // Возвращаем пользователя на экран HomeView
+                            presentationMode.wrappedValue.dismiss()
                         }) {
                             Text("Save")
                                 .frame(width: 120, height: 50)
@@ -172,7 +168,20 @@ struct AlarmSettingsView: View {
                                 .background(Color("ImportantColorSet"))
                                 .cornerRadius(10)
                                 .padding()
-                            
+                        }
+                        
+                        Button(action: {
+                            if let alarmIndex = alarmIndex {
+                                // Удаление будильника
+                                alarmViewModel.deleteAlarm(at: alarmIndex)
+                                // Возвращаем пользователя на экран HomeView
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }) {
+                            Text("Delete alarm")
+                                .padding()
+                                .foregroundColor(.red)
+                                .cornerRadius(10)
                         }
                     }
                     .padding()
