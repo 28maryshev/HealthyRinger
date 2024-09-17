@@ -20,6 +20,7 @@ struct HomeView: View {
                 Text("Statistic")
             }.tag(1)
             
+            // MARK: - Alarm Tab
             NavigationView {
                 VStack {
                     ScrollView {
@@ -36,7 +37,7 @@ struct HomeView: View {
                                     alarmViewModel.loadAlarm(at: index)
                                 }
                             ) {
-                                AlarmWidgetView(alarm: alarmViewModel.alarms[index])  // Передаем конкретный будильник
+                                AlarmWidgetView(alarm: alarmViewModel.alarms[index])
                             }
                         }
                         
@@ -51,7 +52,7 @@ struct HomeView: View {
                             isActive: $isEditingNewAlarm
                         ) {
                             Button(action: {
-                                alarmViewModel.resetCurrentAlarm() // Сброс данных для нового будильника
+                                alarmViewModel.resetCurrentAlarm()
                                 isEditingNewAlarm = true
                             }) {
                                 Text("+")
@@ -72,6 +73,21 @@ struct HomeView: View {
                 Text("Alarm")
             }.tag(2)
             
+            // Добавьте отображение AlarmAlertView
+                .alert(isPresented: $alarmViewModel.showAlert) {
+                    Alert(
+                        title: Text("Wake Up!"),
+                        message: Text("It's time to wake up!"),
+                        primaryButton: .default(Text("Snooze +10 min")),
+                        secondaryButton: .destructive(Text("Stop"), action: {
+                            // Ваш код для остановки будильника
+                        })
+                    )
+                }
+            
+            
+            
+            
             // MARK: - Settings Tab
             NavigationView {
                 Color("BackgroundColorSet").ignoresSafeArea()
@@ -91,3 +107,12 @@ struct HomeView: View {
         soundSettingsViewData: SoundSettingsViewModel()
     )
 }
+
+ 
+
+
+
+
+
+
+
