@@ -11,7 +11,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            // MARK: - Alarm Tab
+            // MARK: - Statistic Tab
             NavigationView {
                 Color("BackgroundColorSet").ignoresSafeArea()
             }
@@ -67,26 +67,28 @@ struct HomeView: View {
                         }
                     }.background(Color("BackgroundColorSet"))
                 }
+                .alert(isPresented: $alarmViewModel.showAlert) { // Добавьте отображение AlarmAlertView здесь
+                    Alert(
+                        title: Text("Wake Up!"),
+                        message: Text("It's time to wake up!"),
+                        primaryButton: .default(Text("Snooze +10 min"), action: {
+                            // Ваш код для отсрочки
+                            Task {
+                                await alarmViewModel.stopLiveActivity() // Остановить текущую Live Activity
+                                await alarmViewModel.startLiveActivity() // Запустить новую Live Activity с отсрочкой
+                            }
+                        }),
+                        secondaryButton: .destructive(Text("Stop"), action: {
+                            // Ваш код для остановки будильника
+                            alarmViewModel.stopLiveActivity() // Остановить текущую Live Activity
+                        })
+                    )
+                }
             }
             .tabItem {
                 Image(systemName: "alarm")
                 Text("Alarm")
             }.tag(2)
-            
-            // Добавьте отображение AlarmAlertView
-                .alert(isPresented: $alarmViewModel.showAlert) {
-                    Alert(
-                        title: Text("Wake Up!"),
-                        message: Text("It's time to wake up!"),
-                        primaryButton: .default(Text("Snooze +10 min")),
-                        secondaryButton: .destructive(Text("Stop"), action: {
-                            // Ваш код для остановки будильника
-                        })
-                    )
-                }
-            
-            
-            
             
             // MARK: - Settings Tab
             NavigationView {
@@ -107,12 +109,3 @@ struct HomeView: View {
         soundSettingsViewData: SoundSettingsViewModel()
     )
 }
-
- 
-
-
-
-
-
-
-
