@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
-
-import SwiftUI
+import ActivityKit // Импортируем ActivityKit для Live Activity
 
 class AlarmViewModel: ObservableObject {
     @Published var alarms: [Alarm] = []
@@ -9,23 +8,15 @@ class AlarmViewModel: ObservableObject {
     @Published var time = Date()
     @Published var isAlarmEnabled: Bool = false
     @Published var repeatDays: [String] = ["MON", "TUE", "WED", "THU", "FRI"]
-    @Published var showAlert: Bool = false  // Добавляем состояние для отображения Alert
+    @Published var showAlert: Bool = false  // Состояние для отображения Alert
     
     @Published var week: [String] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
     
     init() {
         // Проверяем, есть ли будильники. Если нет, добавляем стандартный будильник.
         if alarms.isEmpty {
-            //               // Установка времени на 6:00 утра
-            //               var dateComponents = DateComponents()
-            //               dateComponents.hour = 6
-            //               dateComponents.minute = 0
-            
-            // Получаем текущую дату
             let currentCalendar = Calendar.current
             let currentDate = currentCalendar.startOfDay(for: Date())
-            
-            // Устанавливаем время на 7:00 утра текущего дня
             let adjustedTime = currentCalendar.date(bySettingHour: 7, minute: 0, second: 0, of: currentDate) ?? Date()
             
             let defaultAlarm = Alarm(
@@ -88,22 +79,31 @@ class AlarmViewModel: ObservableObject {
     
     // Сброс текущих параметров будильника для создания нового
     func resetCurrentAlarm() {
-        alarmName = "New Alarm"
-        time = Date()
-        isAlarmEnabled = true
-        repeatDays = ["MON", "TUE", "WED", "THU", "FRI"]
+        // Сброс параметров будильника
     }
     
-    // Загрузка данных существующего будильника
-    func loadAlarm(at index: Int) {
-        if index < alarms.count {
-            let alarm = alarms[index]
-            alarmName = alarm.name
-            time = alarm.time
-            isAlarmEnabled = alarm.isAlarmEnabled
-            repeatDays = alarm.repeatDays
+    // Функция для запуска Live Activity
+    func startLiveActivity() {
+        Task {
+            let attributes = AlarmActivityAttributes(name: alarmName)
+            let contentState = AlarmActivityAttributes.ContentState(progress: 0.0)
+            
+            do {
+                // Используем await для асинхронного вызова
+                let activity = try await Activity.request(attributes: attributes, contentState: contentState, pushType: nil)
+                print("Live Activity started: \(activity.id)")
+            } catch {
+                print("Failed to start Live Activity: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    // Функция для остановки Live Activity
+    func stopLiveActivity() {
+        Task {
+            guard let activity = Activity<AlarmActivityAttributes>.activities.first else { return }
+            // Используем await для завершения активности
+            await activity.end(dismissalPolicy: .immediate)
         }
     }
 }
-
-
